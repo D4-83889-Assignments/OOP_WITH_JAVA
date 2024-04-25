@@ -75,7 +75,15 @@ public class TestPointArray1 {
 					int Eindex = new Scanner(System.in).nextInt();
 					if(Eindex<=arr.length-1)
 					{
-						System.out.println("Distance between the point: "+arr[Sindex].calculateDistance(arr[Eindex]));
+						if(arr[Sindex].isEqual(arr[Eindex]))
+						{
+							System.out.println("Points are same");
+						}
+						else
+						{
+							System.out.println("Distance between the point: "+arr[Sindex].calculateDistance(arr[Eindex]));	
+						}
+						
 						
 					}
 					else
