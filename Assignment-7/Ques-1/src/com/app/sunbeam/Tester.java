@@ -26,7 +26,7 @@ public class Tester {
 		int sum =  0;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter No of players you want to work with..");
-		Cricketer arr[] = new Cricketer[sc.nextInt()];
+		Player arr[] = new Player[sc.nextInt()];
 		int index = 0;
 		while((choice=menu(sc))!=0)
 		{
@@ -45,9 +45,14 @@ public class Tester {
 				break;
 				
 			case 2:
-				for (Cricketer cricketer : arr) {
+				for (Player cricketer : arr) {
 					
-					sum +=cricketer.getRuns();
+					Cricketer r;
+					
+					
+					 r = (Cricketer)cricketer;
+					
+					sum += r.getRuns();
 					
 					
 				}
@@ -56,9 +61,10 @@ public class Tester {
 				break;
 				
 			case 3:
-				for (Cricketer cricketer : arr) {
-					
-					sum +=cricketer.getWickets();
+				for (Player cricketer : arr) {
+					Cricketer r;
+					r = (Cricketer)cricketer;
+					sum +=r.getWickets();
 					
 				}
 				System.out.println("Total Wickets: "+sum);
@@ -66,9 +72,11 @@ public class Tester {
 				break;
 				
 			case 4:
-				for (Cricketer cricketer : arr) {
+				for (Player cricketer : arr) {
+					Cricketer r;
+					r = (Cricketer)cricketer;
 					
-					sum +=cricketer.getMatchesPlayed();
+					sum +=r.getMatchesPlayed();
 					
 				}
 				System.out.println("Total Matches: "+sum);
@@ -79,18 +87,23 @@ public class Tester {
 
 				
 		case 5:
-				for (Cricketer cricketer : arr) {
+				for (Player cricketer : arr) {
 					
-					cricketer.displayName();
+					Cricketer r;
+					r = (Cricketer)cricketer;
+					
+					r.displayName();
 					
 				}
 				break;
 				
 		case 6:
-			for (Cricketer cricketer : arr) {
+			for (Player cricketer : arr) {
 				
-				cricketer.displayName();
-				cricketer.displayMatches();
+				Cricketer r;
+				r = (Cricketer)cricketer;
+				r.displayName();
+				r.displayMatches();
 				
 			}
 				
